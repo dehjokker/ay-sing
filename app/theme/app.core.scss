@@ -7,8 +7,16 @@
 // By default each design mode includes these shared imports.
 // App Shared Sass variables belong in app.variables.scss.
 
-@import "../pages/about/about";
+@import "../pages/song/song";
 
-@import "../pages/contact/contact";
+@import "../pages/collections/collections";
 
-@import "../pages/home/home";
+@import "../pages/numpad/numpad";
+
+@import "../pages/search/search";
+
+@import "../pages/more/more";
+
+body {
+  font-family: 'Lato', sans-serif;
+}
