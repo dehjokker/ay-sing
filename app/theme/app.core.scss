@@ -20,3 +20,25 @@
 body {
   font-family: 'Lato', sans-serif;
 }
+
+ion-tabbar {
+  background: white;
+  border-top: none;
+}
+
+.toolbar-background {
+  background: map-get($map: $colors, $key: primary);
+  border-color: map-get($map: $colors, $key: primary);
+}
+
+.toolbar-title {
+  color: white;
+}
+
+.tab-button {
+  color: #4a4a4a;
+}
+
+.bar-button-default {
+  color: map-get($map: $colors, $key: secondary);
+}
