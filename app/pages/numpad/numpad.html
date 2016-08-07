@@ -1,17 +1,34 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
+<ion-content class="numpad">
+  <div class="numpad__display">
+    <input type="text" [(ngModel)]="number">
+  </div>
 
-<ion-content padding class="home">
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>app/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <div class="numpad__numbers">
+    <div class="numpad__column">
+      <button class="numpad__number" (click)="enterDigit(1)">1</button>
+      <button class="numpad__number" (click)="enterDigit(4)">4</button>
+      <button class="numpad__number" (click)="enterDigit(7)">7</button>
+      <button class="numpad__number numpad__number--clear" (click)="clearInput()">Clear</button>
+    </div>
+
+    <div class="numpad__column">
+      <button class="numpad__number" (click)="enterDigit(2)">2</button>
+      <button class="numpad__number" (click)="enterDigit(5)">5</button>
+      <button class="numpad__number" (click)="enterDigit(8)">8</button>
+      <button class="numpad__number" (click)="enterDigit(0)">0</button>
+    </div>
+
+    <div class="numpad__column">
+      <button class="numpad__number" (click)="enterDigit(3)">3</button>
+      <button class="numpad__number" (click)="enterDigit(6)">6</button>
+      <button class="numpad__number" (click)="enterDigit(9)">9</button>
+      <button class="numpad__number numpad__number--backspace" (click)="backspace()">
+        <ion-icon name="backspace-outline"></ion-icon>
+      </button>
+    </div>
+  </div>
+
+  <div class="numpad__go">
+    <button (click)="go()">Go</button>
+  </div>
 </ion-content>
