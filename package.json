@@ -45,5 +45,6 @@
     }
   ],
   "name": "ay-sing",
-  "description": "ay-sing: An Ionic project"
+  "description": "ay-sing: An Ionic project",
+  "version": "1.0.0"
 }
