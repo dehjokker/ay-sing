@@ -1,3 +1,54 @@
-.song {
+@import "../../theme/_mixins.scss";
 
+.song {
+  @include element(meta) {
+    background: map-get($map: $colors, $key: secondary);
+  }
+
+  @include element(title) {
+    color: white;
+    font-weight: 700;
+    font-size: 2.8rem;
+    margin: 8px 0;
+  }
+
+  @include element(key) {
+    font-weight: 700;
+    font-size: 1.6rem;
+  }
+
+  @include element(info) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include element(actions) {
+    ion-icon {
+      color: white;
+    }
+  }
+
+  @include element(lyrics) {
+      font-size: 1.7rem;
+
+      p {
+        margin-bottom: 3rem;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+
+      b {
+        font-weight: 700;
+        font-size: 1.8rem;
+        color: map-get($map: $colors, $key: primary);
+        margin-bottom: 8px;
+        display: block;
+
+        & + br {
+          display: none;
+        }
+      }
+  }
 }

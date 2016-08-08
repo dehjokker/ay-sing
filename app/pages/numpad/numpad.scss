@@ -1,83 +1,87 @@
 @import "../../theme/mixins";
 
 .numpad {
-    @include element(display) {
+  scroll-content {
+    overflow: hidden;
+  }
+
+  @include element(display) {
+    background: map-get($map: $colors, $key: primary);
+    height: 20%;
+    overflow: hidden;
+
+    input {
       background: map-get($map: $colors, $key: primary);
-      height: 20%;
-      overflow: hidden;
-
-      input {
-        background: map-get($map: $colors, $key: primary);
-        border: none;
-        text-align: center;
-        color: white;
-        font-size: 40px;
-        font-weight: 700;
-        pointer-events: none;
-        @include size(100%);
-        position: relative;
-        bottom: -8px;
-      }
-    }
-
-    @include element(column) {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: flex-start;
-      width: 33%;
-    }
-
-    @include element(number) {
-      background: none!important;
-      font-size: 250%;
-      font-weight: 700;
-      color: white;
-      padding: 0;
-      text-align: left;
-      height: 25%;
-      width: 100%;
       border: none;
+      text-align: center;
+      color: white;
+      font-size: 4rem;
+      font-weight: 700;
+      pointer-events: none;
+      @include size(100%);
+      position: relative;
+      bottom: -8px;
+    }
+  }
+
+  @include element(column) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 33%;
+  }
+
+  @include element(number) {
+    background: none!important;
+    font-size: 3.4rem;
+    font-weight: 700;
+    color: white;
+    padding: 0;
+    text-align: left;
+    height: 25%;
+    width: 100%;
+    border: none;
+    flex: 1;
+    box-shadow: none!important;
+
+    @include modifier(clear) {
+      position: relative;
+      top: -2px;
+      font-size: 30px;
+    }
+
+    @include modifier(backspace) {
+      font-size: 3rem;
+    }
+
+    &.activated {
+      background: none;
+
+      span {
+        background-image: radial-gradient(circle, #fff, map-get($map: $colors, $key: secondary) 30%);
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  @include element(numbers) {
+    background: map-get($map: $colors, $key: secondary);
+    height: 65%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  @include element(go) {
+    background: map-get($map: $colors, $key: primary);
+    height: 15%;
+
+    button {
+      margin: 0;
       flex: 1;
-      box-shadow: none!important;
-
-      @include modifier(clear) {
-        position: relative;
-        top: -2px;
-        font-size: 30px;
-      }
-
-      @include modifier(backspace) {
-        font-size: 30px;
-      }
-
-      &.activated {
-        background: none;
-
-        span {
-          background-image: radial-gradient(circle, #fff, map-get($map: $colors, $key: secondary) 30%);
-          background-repeat: no-repeat;
-        }
-      }
+      font-size: 28px;
+      font-weight: 700;
+      @include size(100%);
     }
-
-    @include element(numbers) {
-      background: map-get($map: $colors, $key: secondary);
-      height: 65%;
-      display: flex;
-      justify-content: space-around;
-    }
-
-    @include element(go) {
-      background: map-get($map: $colors, $key: primary);
-      height: 15%;
-
-      button {
-        margin: 0;
-        flex: 1;
-        font-size: 28px;
-        font-weight: 700;
-        @include size(100%);
-      }
-    }
+  }
 }

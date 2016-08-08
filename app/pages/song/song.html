@@ -7,12 +7,34 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>song</ion-title>
+    <ion-buttons start>
+      <button>Prev</button>
+    </ion-buttons>
+
+    <ion-title>{{song.number}}</ion-title>
+
+    <ion-buttons end>
+      <button>Next</button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="song">
+  <div class="song__meta" padding>
+    <h1 class="song__title">{{song.title}}</h1>
+    <div class="song__info">
+      <p class="song__key">{{song.key}}</p>
+
+      <div class="song__actions">
+        <button clear (click)="bookmark()"><ion-icon name="bookmark"></ion-icon></button>
+        <button clear *ngIf="song.sheetMusic" (click)="getSheetMusic()"><ion-icon name="musical-notes"></ion-icon></button>
+        <button clear *ngIf="song.midi" (click)="toggleMusic()"><ion-icon name="play"></ion-icon></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="song__lyrics" padding [innerHTML]="song.lyrics"></div>
 
 </ion-content>
